@@ -1,0 +1,31 @@
+def binary_search(A,x):
+    i=0
+    j=len(A)-1
+    
+    while (i<=j):
+        mid=(i+j)//2
+        if A[mid]==x:
+            return mid 
+        elif A[mid]>x:
+            j=mid-1
+        else:
+            i=mid+1
+            
+    return -1
+    
+A=[1,2,3,4,5]
+x=2
+print(binary_search(A,x))
+
+A=[1,2,3,4,5]
+x=5
+print(binary_search(A,x))
+
+A=[1,2,3,4,5]
+x=10
+print(binary_search(A,x))
+
+A=[1]
+x=1
+print(binary_search(A,x))
+
