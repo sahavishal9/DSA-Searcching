@@ -1,0 +1,20 @@
+def binSearchInf(A,x):
+    l=0
+    h=1 
+    n=len(A)
+    while(l<=h and h<n):
+        mid=(l+h)//2 
+        if A[mid]==x:
+            return mid 
+        elif A[mid]>x:
+            h=mid-1 
+        else:
+            l=mid+1 
+            h=min(n-1,l*2)  
+    return -1 
+
+
+A=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]  
+x=2
+print(binSearchInf(A,x))
+            
