@@ -1,0 +1,28 @@
+def lastOccurence(A,x,l,h):
+    if (l<=h):
+        mid=(l+h)//2 
+        if (A[mid]>x):
+            return lastOccurence(A,x,l,mid-1)
+        elif A[mid]<x:
+            return lastOccurence(A,x,mid+1,h)
+        else:
+            if (mid==len(A)-1 or A[mid+1]!=A[mid]):
+                return mid
+            else:
+                return lastOccurence(A,x,mid+1,h)
+    else:
+        return -1 
+ 
+ 
+A=[3,3,3,3,3]   
+x=3
+print(lastOccurence(A,x,0,len(A)-1))
+
+A=[1,2,3,3,3,3,3]   
+x=3
+print(lastOccurence(A,x,0,len(A)-1))
+
+A=[1,2,3,3,3,3,3]   
+x=2
+print(lastOccurence(A,x,0,len(A)-1))
+            
