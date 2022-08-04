@@ -1,0 +1,28 @@
+def firstOccurence(A,x,l,h):
+    if (l<=h):
+        mid=(l+h)//2 
+        if (A[mid]>x):
+            return firstOccurence(A,x,l,mid-1)
+        elif A[mid]<x:
+            return firstOccurence(A,x,mid+1,h)
+        else:
+            if (mid==0 or A[mid-1]!=A[mid]):
+                return mid
+            else:
+                return firstOccurence(A,x,l,mid-1)
+    else:
+        return -1 
+ 
+ 
+A=[3,3,3,3,3]   
+x=3
+print(firstOccurence(A,x,0,len(A)-1))
+
+A=[1,2,3,3,3,3,3]   
+x=3
+print(firstOccurence(A,x,0,len(A)-1))
+
+A=[1,2,3,3,3,3,3]   
+x=2
+print(firstOccurence(A,x,0,len(A)-1))
+            
