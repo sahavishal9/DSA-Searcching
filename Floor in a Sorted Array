@@ -1,0 +1,21 @@
+def findFloor(A,N,X):
+        #Your code here
+        l=0
+        h=N-1
+        ans=-1
+        while (l<=h):
+            mid=(l+h)//2
+            if A[mid]==X:
+                return mid
+            elif A[mid]>X:
+                h=mid-1
+            else:
+                ans=mid
+                l=mid+1
+                
+              
+        return ans
+A=[1,2,3,4,5,6]
+N=len(A)
+X=0
+print(findFloor(A,N,X))
