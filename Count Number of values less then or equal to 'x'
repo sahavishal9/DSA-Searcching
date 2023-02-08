@@ -1,0 +1,14 @@
+def count(A,x,low,high):
+    mid=(low+high)//2 
+    if low>high:
+        return low
+    if A[mid]<=x:
+        low=mid+1
+        return count(A,x,low,high)
+    else:
+        high=mid-1
+        return count(A,x,low,high)
+        
+A=[1,1,2,2,2,3,3,10,15,15]
+x=3
+print(count(A,x,0,len(A)-1))
